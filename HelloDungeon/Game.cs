@@ -54,10 +54,6 @@ namespace HelloDungeon
             int numberOfAttempts = 4;
             string input = "";
 
-            //Loop until the player gets the riddle right or they run out of tries
-            for (int i = 0; i < numberOfAttempts; i++)
-            {
-
                 //Draws monkey character 
                 Console.WriteLine("     __\n" +
                                    "w  c(..)o   (\n" +
@@ -72,6 +68,13 @@ namespace HelloDungeon
                 Console.WriteLine("A very old man with a monkey on his back approaches you." +
                 "\n The monkey offers you immortality if you can solve a riddle in " + numberOfAttempts + " attempts.");
                 Console.WriteLine("What has to be broken before you can use it?");
+
+            Console.ReadKey();
+            Console.Clear();
+
+            //Loop until the player gets the riddle right or they run out of tries
+            for (int i = 0; i < numberOfAttempts; i++)
+            {
 
                 //Get input for the players guess 
                 Console.Write("> ");
@@ -89,6 +92,7 @@ namespace HelloDungeon
                     Console.WriteLine("Congrats! You've gained immortality!");
                     Console.ReadKey();
                     Room3();
+                    i = 0;
                 }
                 else
                     //If the player doesn't answer correctly deal damage to them
@@ -129,6 +133,7 @@ namespace HelloDungeon
                 gameOver = false;
                 playerIsAlive = true;
                 health = 20;
+
             }
             //Otherwise if the player wants to quit...
             else if (input == 2)
